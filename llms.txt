@@ -1,0 +1,96 @@
+# TRANSCEND MCP Server
+
+> MCP Server for TRANSCEND Route Optimization API — real-time truck routing, toll costs, weather, POIs, traffic and fuel stations for Europe.
+
+## About
+
+The TRANSCEND MCP Server exposes 12 tools from the TRANSCEND logistics API platform as Model Context Protocol (MCP) functions. Compatible with Claude Desktop, Cursor, Cline, Continue, Windsurf, Copilot, and any LLM agent supporting MCP.
+
+Built on real production microservices (Valhalla routing engine + LSTM traffic prediction). Covers Spain, Portugal, France, Germany, and Italy.
+
+## Installation
+
+**PyPI:**
+```bash
+pip install transcend-mcp
+```
+
+**Clone & install:**
+```bash
+git clone https://github.com/cargoffer/transcend-mcp-server.git
+cd transcend-mcp-server
+pip install -e .
+```
+
+Requires Python >= 3.10 and a TRANSCEND API key.
+
+## Tools
+
+### Route
+- `calculate_route(origin, destination, vehicle_weight, vehicle_type)` — Optimized route for heavy vehicles with weight/height/cargo restrictions
+- `calculate_route_costs(origin, destination)` — Complete cost: tolls + fuel + maintenance + CO2
+
+### Weather
+- `get_current_weather(lat, lon)` — Real-time conditions
+- `get_weather_forecast(lat, lon, start, end)` — Forecast range
+- `get_weather_alerts` — Active weather alerts
+
+### Points of Interest
+- `find_parking_by_location(lat, lon, radius)` — Truck parking near coordinates
+- `find_parking_by_zipcode(zipcode, country)` — Truck parking by postal code
+- `find_parking_by_province(province)` — Truck parking by province
+
+### Fuel Stations
+- `find_stations_nearby(lat, lon, radius)` — Nearby gas stations
+- `search_stations(q, fuel_type)` — Search stations with fuel type filter
+- `get_station_best_prices(lat, lon)` — Best fuel prices near location
+
+### Traffic
+- `get_blackspots_path(points)` — Blackspots (danger zones) along a route
+
+## Quick Start
+
+```python
+from transcend_mcp import TranscendMCP
+
+# Run MCP server
+server = TranscendMCP(api_key="your-key")
+server.run()
+```
+
+### Claude Desktop config
+
+```json
+{
+  "mcpServers": {
+    "transcend": {
+      "command": "python",
+      "args": ["-m", "transcend_mcp"],
+      "env": { "TRANSCEND_API_KEY": "your-key" }
+    }
+  }
+}
+```
+
+## Endpoints & APIs Used
+
+Each tool maps to a production microservice:
+
+| Module | Base URL |
+|--------|----------|
+| Route | https://api.transcend.es/route |
+| Tolls | https://back.transcend.cargoffer.com/tolls |
+| Weather | https://back.transcend.cargoffer.com/weather/api |
+| POI | https://back.transcend.cargoffer.com/poi |
+| Traffic | https://traffic.transcend.cargoffer.com |
+| Stations | https://back.transcend.cargoffer.com/stations |
+
+## Registration
+
+This MCP server is registered at:
+- https://smithery.ai — search "transcend"
+- https://mcp.so — search "transcend"
+
+## License
+
+MIT — Cargoffer (c) 2026
