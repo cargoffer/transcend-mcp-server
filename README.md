@@ -78,6 +78,35 @@ transcend-mcp-server/
 
 ---
 
+---
+
+## Authentication
+
+To use this MCP server, you need an API key from the TRANSCEND platform.
+
+**Register:** https://transcend.cargoffer.com
+
+Create an account and get your API key from your profile settings. Then configure:
+
+```bash
+export TRANSCEND_API_KEY="your-api-key"
+```
+
+Or in your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "transcend": {
+      "command": "...",
+      "env": {
+        "TRANSCEND_API_KEY": "your-api-key-from-transcend"
+      }
+    }
+  }
+}
+```
+
 ## Quick Start
 
 ```bash
