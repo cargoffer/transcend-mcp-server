@@ -21,20 +21,18 @@ EnvName = Literal["production", "release-dev"]
 
 MODULE_SERVERS: dict[EnvName, dict[str, str]] = {
     "production": {
-        "route": "https://api.transcend.es/route",
-        "tolls": "https://back.transcend.cargoffer.com/tolls",
-        "weather": "https://back.transcend.cargoffer.com/weather/api",
-        "poi": "https://back.transcend.cargoffer.com/poi",
-        "traffic": "https://traffic.transcend.cargoffer.com",
-        "stations": "https://back.transcend.cargoffer.com/stations",
+        "tolls": "https://back.transcend.cargoffer.com/transcend/tolls",
+        "poi": "https://back.transcend.cargoffer.com/transcend/poi",
+        "stations": "https://back.transcend.cargoffer.com/transcend/stations",
+        "weather": "https://back.transcend.cargoffer.com/transcend/weather",
+        "traffic": "https://back.transcend.cargoffer.com/transcend/traffic",
     },
     "release-dev": {
-        "route": "https://api.transcend.es/route",
-        "tolls": "https://tolls.transcend.cargoffer.com",
-        "weather": "https://weather.transcend.cargoffer.com/api",
-        "poi": "https://poi.transcend.cargoffer.com/api",
-        "traffic": "https://traffic.transcend.cargoffer.com",
-        "stations": "https://stations.transcend.cargoffer.com/api",
+        "tolls": "https://back.transcend.cargoffer.com/transcend/tolls",
+        "poi": "https://back.transcend.cargoffer.com/transcend/poi",
+        "stations": "https://back.transcend.cargoffer.com/transcend/stations",
+        "weather": "https://back.transcend.cargoffer.com/transcend/weather",
+        "traffic": "https://back.transcend.cargoffer.com/transcend/traffic",
     },
 }
 

@@ -227,12 +227,11 @@ python -m transcend_mcp
 
 | Module | Prod URL |
 |--------|----------|
-| Route | `https://api.transcend.es/route` |
-| Tolls | `https://back.transcend.cargoffer.com/tolls` |
-| Weather | `https://back.transcend.cargoffer.com/weather/api` |
-| POI | `https://back.transcend.cargoffer.com/poi` |
-| Traffic | `https://traffic.transcend.cargoffer.com` |
-| Stations | `https://back.transcend.cargoffer.com/stations` |
+| Tolls | `https://back.transcend.cargoffer.com/transcend/tolls` |
+| POI | `https://back.transcend.cargoffer.com/transcend/poi` |
+| Stations | `https://back.transcend.cargoffer.com/transcend/stations` |
+| Weather | `https://back.transcend.cargoffer.com/transcend/weather` |
+| Traffic | `https://back.transcend.cargoffer.com/transcend/traffic` |
 
 ---
 

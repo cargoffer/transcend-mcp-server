@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "transcend-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server para la API de optimización de rutas TRANSCEND"
 readme = "README.md"
 license = {text = "MIT"}
