@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "transcend-mcp"
-version = "0.1.1"
+version = "1.0.0"
 description = "MCP server para la API de optimización de rutas TRANSCEND"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-keywords = ["mcp", "transcend", "route-optimization", "logistics"]
+keywords = ["mcp", "transcend", "route-optimization", "logistics", "route-planner", "ai agents", "llm tools", "transportation", "navigation", "fleet management", "delivery routing", "trip planning", "geolocation", "gps navigation", "last mile delivery"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
